@@ -4,10 +4,10 @@
   "description": "A package containing common utility functions for the entire Lullo ecosystem",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LulloIO/lullo-utils.git"
+    "url": "https://github.com/OmarOmeiri/utils.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@lulloio"
+    "registry": "https://npm.pkg.github.com/@omaromeiri"
   },
   "exports": {
     "./api": "./build/src/api/index.js",
@@ -57,7 +57,7 @@
     "dayjs": "^1.11.3",
     "dayjs-business-time": "^1.0.4",
     "lodash": "^4.17.21",
-    "lullo-common-types": "github:LulloIO/lullo-common-types",
+    "lullo-common-types": "github:OmarOmeiri/ctypes",
     "randexp": "^0.5.3",
     "uniqid": "^5.4.0"
   },
