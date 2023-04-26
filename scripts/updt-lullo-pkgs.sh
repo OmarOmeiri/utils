@@ -1,7 +1,7 @@
 #!/bin/env bash
 pkgs=("$@")
 
-PKGS="github:LulloIO/lullo-common-types
+PKGS="github:omaromeiri/ctypes
 github:omaromeiri/devlogger"
 
 function updt() {
