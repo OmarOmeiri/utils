@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+(npm run lint) && true
+status=$?
+
+if [ $status -ne 0 ]; then
+  git reset -q
+  echo ""
+  echo "\e[35m[\e[31mERROR\e[0m\e[35m] Linting failed. Git history was reset. You should run \`\e[33;1mgit add\`\e[0m\e[35m AND \`\e[33;1mgit commit\`\e[0m\e[35m again\033[0m"
+  echo ""
+  exit $status
+fi

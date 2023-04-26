@@ -1,0 +1,12 @@
+/typings
+node_modules
+/.private
+/utils
+Utils.ts
+tsconfig.json
+tsconfig.production.json
+.eslintrc.json
+/src
+/testing
+index.ts
+*.tsbuildinfo

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/Path/index.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;AAAA,yCAAuB","sourcesContent":["export * from './path';\n"]}

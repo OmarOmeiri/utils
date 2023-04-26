@@ -1,0 +1,10 @@
+{
+  "name": "Lullo Utils",
+  "entryPointStrategy": "expand",
+  "categorizeByGroup": false,
+  "entryPoints": ["src"],
+  "out": "docs",
+  "exclude": "**/*+(index|.test|.e2e|.spec).ts",
+  "plugin": "typedoc-theme-hierarchy",
+  "theme": "hierarchy"
+}
