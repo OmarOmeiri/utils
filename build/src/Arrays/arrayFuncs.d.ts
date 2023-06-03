@@ -484,5 +484,5 @@ export declare function windowArray<T>(arr: Array<T>, size: number): Generator<A
 /**
  * Maps through chunks of an array of a given sizencu
  */
-export declare function mapChunk<T, const S extends number, R>(arr: T[], callback: (t: T[]) => R, size: S): R[];
+export declare function mapChunk<T, const S extends number, R>(arr: T[], callback: (t: T[], i: number) => R, size: S): R[];
 export {};

@@ -914,7 +914,7 @@ exports.windowArray = windowArray;
  * Maps through chunks of an array of a given sizencu
  */
 function mapChunk(arr, callback, size) {
-    return chunk(arr, size).map((c) => callback(c));
+    return chunk(arr, size).map((c, i) => callback(c, i));
 }
 exports.mapChunk = mapChunk;
 //# sourceMappingURL=arrayFuncs.js.map
