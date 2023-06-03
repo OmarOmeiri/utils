@@ -1,5 +1,5 @@
-declare type NullOrUndefNum = null | undefined | number;
-export declare type RatiosROSParams = {
+type NullOrUndefNum = null | undefined | number;
+export type RatiosROSParams = {
     operatingIncome: NullOrUndefNum;
     sales: NullOrUndefNum;
 };
@@ -14,7 +14,7 @@ export declare type RatiosROSParams = {
  * ROS <- operating_income / total_revenue
  */
 export declare const RatiosROS: ({ operatingIncome, sales, }: RatiosROSParams) => number | null;
-export declare type RatiosGMParams = {
+export type RatiosGMParams = {
     revenue: NullOrUndefNum;
     COGS: NullOrUndefNum;
 };
@@ -26,7 +26,7 @@ export declare type RatiosGMParams = {
  * GM <- (Revenue - COGS) / Revenue
  */
 export declare const RatiosGM: ({ revenue, COGS, }: RatiosGMParams) => number | null;
-export declare type RatiosNetMarginParams = {
+export type RatiosNetMarginParams = {
     revenue: NullOrUndefNum;
     netIncome: NullOrUndefNum;
 };
@@ -37,7 +37,7 @@ export declare type RatiosNetMarginParams = {
  * NM <- Net Profit / Net Revenue
  */
 export declare const RatiosNetMargin: ({ revenue, netIncome, }: RatiosNetMarginParams) => number | null;
-export declare type RatiosEBITDAMarginParams = {
+export type RatiosEBITDAMarginParams = {
     EBITDA: NullOrUndefNum;
     revenue: NullOrUndefNum;
 };
@@ -49,7 +49,7 @@ export declare type RatiosEBITDAMarginParams = {
  * EBITDA_M <- EBITDA / Total Revenue
  */
 export declare const RatiosEBITDAMargin: ({ EBITDA, revenue, }: RatiosEBITDAMarginParams) => number | null;
-export declare type RatiosEBITMarginParams = {
+export type RatiosEBITMarginParams = {
     EBIT: NullOrUndefNum;
     revenue: NullOrUndefNum;
 };
@@ -61,7 +61,7 @@ export declare type RatiosEBITMarginParams = {
  * EBIT_M <- EBIT / Total Revenue
  */
 export declare const RatiosEBITMargin: ({ EBIT, revenue, }: RatiosEBITMarginParams) => number | null;
-export declare type RatiosROAParams = {
+export type RatiosROAParams = {
     netIncome: NullOrUndefNum;
     totalAssets: NullOrUndefNum;
 };
@@ -75,7 +75,7 @@ export declare type RatiosROAParams = {
  * ROA <- Net Income / total Assets
  */
 export declare const RatiosROA: ({ netIncome, totalAssets, }: RatiosROAParams) => number | null;
-export declare type RatiosROCEParams = {
+export type RatiosROCEParams = {
     EBIT: NullOrUndefNum;
     totalAssets: NullOrUndefNum;
     currentLiabilities: NullOrUndefNum;
@@ -89,7 +89,7 @@ export declare type RatiosROCEParams = {
  * ROCE <- operating_income / (total_assets - current_liabilities)
  */
 export declare const RatiosROCE: ({ EBIT, totalAssets, currentLiabilities, }: RatiosROCEParams) => number | null;
-export declare type RatiosROEParams = {
+export type RatiosROEParams = {
     netIncome: NullOrUndefNum;
     shareholdersEquity: NullOrUndefNum;
 };
@@ -101,7 +101,7 @@ export declare type RatiosROEParams = {
   * ROE <-  net_income / Net Asset (Patrimonio líquido)
   */
 export declare const RatiosROE: ({ netIncome, shareholdersEquity, }: RatiosROEParams) => number | null;
-export declare type RatiosROICParams = {
+export type RatiosROICParams = {
     operatingIncome: NullOrUndefNum;
     taxes: NullOrUndefNum;
     totalDebt: NullOrUndefNum;

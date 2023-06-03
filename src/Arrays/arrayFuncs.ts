@@ -253,7 +253,7 @@ export const arrayInnerJoin = <T>(arr1: T[], arr2: T[]): T[] => {
  * @param {Number} size size of the chunks
  * @returns
  */
-export function chunk<T>(array: T[], size: number): T[][] | null {
+export function chunk<T>(array: T[], size: number): T[][] {
   const chunks = [];
   const arrLength = array.length;
   const chunkNum = arrLength / size;
@@ -987,4 +987,11 @@ export function* windowArray<T>(arr: Array<T>, size: number): Generator<Array<T>
   for (const i of Array(iterations).keys()) {
     yield range(i, i + (size - 1)).map((j) => arr[j]);
   }
+}
+
+/**
+ * Maps through chunks of an array of a given sizencu
+ */
+export function mapChunk <T, const S extends number, R>(arr: T[], callback: (t: T[]) => R, size: S): R[] {
+  return chunk(arr, size).map((c) => callback(c));
 }

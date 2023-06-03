@@ -59,7 +59,7 @@ export declare const objectPathsWithValues: (obj: {
  * @param keyNameOrPattern
  * @returns
  */
-declare type ValByProp<O extends Record<string, unknown>, K extends keyof O> = KeyExists<O, K> extends true ? O[K] : undefined;
+type ValByProp<O extends Record<string, unknown>, K extends keyof O> = KeyExists<O, K> extends true ? O[K] : undefined;
 export declare function valueByProperty<V, T extends Record<string, V>, K extends keyof T>(data: T | T[], keyNameOrPattern: K): ValByProp<T, K>;
 export declare function valueByProperty<V, T extends Record<string, V>>(data: T | T[], keyNameOrPattern: RegExp): V | undefined;
 export declare function valueByProperty<V, T extends Record<string, V>>(data: T | T[], keyNameOrPattern: string): V | undefined;
@@ -393,7 +393,7 @@ export declare const modObjPropsShallow: <T extends Record<string, unknown>>(obj
  * }
  */
 export declare function groupBy<T extends Record<PropertyKey, unknown>, K extends keyof T>(objArr: readonly T[], property: K | ((d: T) => string | undefined)): Record<string, T[]>;
-declare type GroupByMulti<T, K extends readonly any[]> = K extends readonly [any, ...infer KR] ? Record<string, GroupByMulti<T, KR>> : T[];
+type GroupByMulti<T, K extends readonly any[]> = K extends readonly [any, ...infer KR] ? Record<string, GroupByMulti<T, KR>> : T[];
 export declare const groupByMulti: <T extends Record<K[number], {}>, K extends readonly (keyof T)[]>(arr: readonly T[], keys: readonly [...K], propIndex?: number) => GroupByMulti<T, K>;
 /**
  * Performs a merge operation by keys in an array of objects.
@@ -435,7 +435,7 @@ export declare const groupByMulti: <T extends Record<K[number], {}>, K extends r
  * }
  */
 export declare const mergeObjArr: <T extends Record<string, unknown>>(objs: T[], rmvDuplicates?: boolean) => { [K in keyof T]: T[K][]; };
-declare type GroupByAndMerge<T extends Record<string, unknown>, U extends keyof T> = {
+type GroupByAndMerge<T extends Record<string, unknown>, U extends keyof T> = {
     [K in keyof T]: K extends U ? T[K] : Exclude<T[K], undefined> extends Array<any> ? T[K] : Exclude<T[K], undefined>[] | T[K];
 }[];
 /**
@@ -537,7 +537,7 @@ export declare function isLiteralObject(value: unknown): boolean;
  * @param obj
  */
 export declare function filterUndefinedObjProperties(obj: Record<any, unknown>): void;
-declare type ReindexableObject<K extends string | number | symbol> = Record<string, unknown> & {
+type ReindexableObject<K extends string | number | symbol> = Record<string, unknown> & {
     [k in K]: string | number | null | undefined;
 };
 /**
@@ -707,7 +707,7 @@ export declare function getRandomObjValue<O extends object>(obj: O): O[keyof O];
  * @param obj
  */
 export declare function getRandomObjEntry<O extends object>(obj: O): [keyof O, O[keyof O]];
-declare type UnknownObjectLiteral = {
+type UnknownObjectLiteral = {
     [key: string]: unknown;
 };
 /**
@@ -716,8 +716,8 @@ declare type UnknownObjectLiteral = {
  * @returns
  */
 export declare const isObjectLiteral: (value: unknown) => value is UnknownObjectLiteral;
-declare type TObjKey<O extends object, K extends keyof O> = KeyExists<O, K> extends true ? O[K] : unknown;
-declare type TObj<O, K extends keyof O> = O extends object ? {
+type TObjKey<O extends object, K extends keyof O> = KeyExists<O, K> extends true ? O[K] : unknown;
+type TObj<O, K extends keyof O> = O extends object ? {
     [key in K]: TObjKey<O, key>;
 } : {
     [key in K]: unknown;

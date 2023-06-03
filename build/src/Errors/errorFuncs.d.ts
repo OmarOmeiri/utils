@@ -6,7 +6,7 @@
 export declare function superStackTrace(e: Error, options?: {
     onlyPath?: boolean;
 }): string[];
-declare type ErrKeysTp<T> = T extends undefined ? unknown : T extends 'unknown' ? unknown : T extends 'any' ? any : unknown;
+type ErrKeysTp<T> = T extends undefined ? unknown : T extends 'unknown' ? unknown : T extends 'any' ? any : unknown;
 /**
  * Checks if an error is an object with indexable keys.
  *

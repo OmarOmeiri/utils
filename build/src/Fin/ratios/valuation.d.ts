@@ -1,5 +1,5 @@
-declare type NullOrUndefNum = null | undefined | number;
-export declare type RatiosPSParams = {
+type NullOrUndefNum = null | undefined | number;
+export type RatiosPSParams = {
     price: NullOrUndefNum;
     salesPerShare: NullOrUndefNum;
 };
@@ -16,7 +16,7 @@ export declare type RatiosPSParams = {
 * PS = Price / Sales per Share (SPS)
 */
 export declare const RatiosPS: ({ price, salesPerShare, }: RatiosPSParams) => number | null;
-export declare type RatiosPBParams = {
+export type RatiosPBParams = {
     price: NullOrUndefNum;
     shareholdersEquity: NullOrUndefNum;
     sharesOutstanding: NullOrUndefNum;
@@ -33,7 +33,7 @@ export declare type RatiosPBParams = {
 *
 * PB = Price / Book Value Per Share
 */ export declare const RatiosPB: ({ price, shareholdersEquity, sharesOutstanding, }: RatiosPBParams) => number | null;
-export declare type RatiosPEParams = {
+export type RatiosPEParams = {
     price: NullOrUndefNum;
     sharesOutstanding: NullOrUndefNum;
     netIncome: NullOrUndefNum;
@@ -51,7 +51,7 @@ export declare type RatiosPEParams = {
  * PE <- Price / Earnings per Share (EPS)
  */
 export declare const RatiosPE: ({ price, sharesOutstanding, netIncome, preferredDividends, }: RatiosPEParams) => number | null;
-export declare type RatiosDYParams = {
+export type RatiosDYParams = {
     price: NullOrUndefNum;
     annualDividendsPerShare: NullOrUndefNum;
 };
@@ -61,7 +61,7 @@ export declare type RatiosDYParams = {
 * Dividend Yield = Annual Dividends/ Current Price Per Share
 */
 export declare const RatiosDY: ({ price, annualDividendsPerShare, }: RatiosDYParams) => number | null;
-export declare type RatiosSPSParams = {
+export type RatiosSPSParams = {
     sales: NullOrUndefNum;
     sharesOutstanding: NullOrUndefNum;
 };
@@ -69,7 +69,7 @@ export declare type RatiosSPSParams = {
 * Sales per share (SPS)
 */
 export declare const RatiosSPS: ({ sales, sharesOutstanding, }: RatiosSPSParams) => number | null;
-export declare type RatiosEVSParams = {
+export type RatiosEVSParams = {
     EV: NullOrUndefNum;
     sales: NullOrUndefNum;
 };
@@ -81,7 +81,7 @@ export declare type RatiosEVSParams = {
  * EVS = EV / Sales
  */
 export declare const RatiosEVS: ({ EV, sales, }: RatiosEVSParams) => number | null;
-export declare type RatiosEVEBITDAParams = {
+export type RatiosEVEBITDAParams = {
     EV: NullOrUndefNum;
     EBITDA: NullOrUndefNum;
 };
@@ -93,7 +93,7 @@ export declare type RatiosEVEBITDAParams = {
  * EVTEBITDA = EV / EBITDA
  */
 export declare const RatiosEVEBITDA: ({ EV, EBITDA, }: RatiosEVEBITDAParams) => number | null;
-export declare type RatiosEVEBITParams = {
+export type RatiosEVEBITParams = {
     EV: NullOrUndefNum;
     EBIT: NullOrUndefNum;
 };
@@ -105,7 +105,7 @@ export declare type RatiosEVEBITParams = {
  * EVTEBIT = EV / EBIT
  */
 export declare const RatiosEVEBIT: ({ EV, EBIT, }: RatiosEVEBITParams) => number | null;
-export declare type RatiosNetAssetToAssetParams = {
+export type RatiosNetAssetToAssetParams = {
     shareholdersEquity: NullOrUndefNum;
     totalAssets: NullOrUndefNum;
 };
@@ -115,7 +115,7 @@ export declare type RatiosNetAssetToAssetParams = {
  * NATA <- net_assets / total_assets
  */
 export declare const RatiosNetAssetToAsset: ({ shareholdersEquity, totalAssets, }: RatiosNetAssetToAssetParams) => number | null;
-export declare type RatiosAssetTurnoverParams = {
+export type RatiosAssetTurnoverParams = {
     revenue: NullOrUndefNum;
     beginAssets: NullOrUndefNum;
     endAssets: NullOrUndefNum;
@@ -126,7 +126,7 @@ export declare type RatiosAssetTurnoverParams = {
  * AT <- total_revenue / ((begin_assets + end_assets) / 2)
  */
 export declare const RatiosAssetTurnover: ({ revenue, beginAssets, endAssets, }: RatiosAssetTurnoverParams) => number | null;
-export declare type RatiosCAGRParams = {
+export type RatiosCAGRParams = {
     beginValue: NullOrUndefNum;
     endValue: NullOrUndefNum;
     period: number;
@@ -135,7 +135,7 @@ export declare type RatiosCAGRParams = {
  * Compound annual growth rate
  */
 export declare const RatiosCAGR: ({ beginValue, endValue, period, }: RatiosCAGRParams) => number | null;
-export declare type RatiosNAVPSParams = {
+export type RatiosNAVPSParams = {
     shareholdersEquity: NullOrUndefNum;
     sharesOutstanding: NullOrUndefNum;
 };
@@ -153,7 +153,7 @@ export declare type RatiosNAVPSParams = {
  * NAVPS <- Net Assets / Number of Shares
  */
 export declare const RatiosNAVPS: ({ shareholdersEquity, sharesOutstanding, }: RatiosNAVPSParams) => number | null;
-export declare type RatiosEPSParams = {
+export type RatiosEPSParams = {
     netIncome: NullOrUndefNum;
     sharesOutstanding: NullOrUndefNum;
     preferredDividends: NullOrUndefNum;
@@ -170,17 +170,17 @@ export declare type RatiosEPSParams = {
  * EPS = (Net Income – Preferred Dividends) / End of period Shares Outstanding
   */
 export declare const RatiosEPS: ({ netIncome, sharesOutstanding, preferredDividends, }: RatiosEPSParams) => number | null;
-export declare type RatiosMarketCapParams = {
+export type RatiosMarketCapParams = {
     price: NullOrUndefNum;
     sharesOutstanding: NullOrUndefNum;
 };
 export declare const RatiosMarketCap: ({ price, sharesOutstanding, }: RatiosMarketCapParams) => number | null;
-export declare type RatiosChowderPassParams = {
+export type RatiosChowderPassParams = {
     DY: NullOrUndefNum;
     CAGR5D: NullOrUndefNum;
 };
 export declare const RatiosChowderPass: ({ DY, CAGR5D, }: RatiosChowderPassParams) => boolean;
-export declare type RatiosPayoutParams = {
+export type RatiosPayoutParams = {
     annualDividends: NullOrUndefNum;
     netIncome: NullOrUndefNum;
 };
@@ -192,7 +192,7 @@ export declare type RatiosPayoutParams = {
  * @returns
  */
 export declare const RatiosPayout: ({ annualDividends, netIncome, }: RatiosPayoutParams) => number | null;
-export declare type RatiosBVPSParams = {
+export type RatiosBVPSParams = {
     shareholdersEquity: NullOrUndefNum;
     sharesOutstanding: NullOrUndefNum;
 };

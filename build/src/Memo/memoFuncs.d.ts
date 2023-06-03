@@ -3,7 +3,7 @@
  * @module MemoUtils
  * @categori Memo
  */
-declare type memoReturn<T> = (...args: any[]) => T;
+type memoReturn<T> = (...args: any[]) => T;
 /**
  * Memoizes a function result.
  * @param fn function to be memoized

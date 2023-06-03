@@ -1,5 +1,5 @@
-declare type NullOrUndefNum = null | undefined | number;
-export declare type EVParams = {
+type NullOrUndefNum = null | undefined | number;
+export type EVParams = {
     price: NullOrUndefNum;
     sharesOutstanding: NullOrUndefNum;
     totalDebt: NullOrUndefNum;
@@ -12,7 +12,7 @@ export declare type EVParams = {
  *
  */
 export declare const EV: ({ price, sharesOutstanding, totalDebt, cash, }: EVParams) => number | null;
-export declare type TaxRateParams = {
+export type TaxRateParams = {
     earningsBeforeTax: NullOrUndefNum;
     totalTax: NullOrUndefNum;
 };
@@ -22,7 +22,7 @@ export declare type TaxRateParams = {
  * @returns
  */
 export declare const taxRate: ({ earningsBeforeTax, totalTax, }: TaxRateParams) => number | null;
-export declare type NOPATParams = {
+export type NOPATParams = {
     EBIT: NullOrUndefNum;
     taxRate: NullOrUndefNum;
 };
@@ -32,7 +32,7 @@ export declare type NOPATParams = {
  * @returns
  */
 export declare const NOPAT: ({ EBIT, taxRate, }: NOPATParams) => number | null;
-export declare type InvestedCapitalParams = {
+export type InvestedCapitalParams = {
     totalDebt: NullOrUndefNum;
     totalEquity: NullOrUndefNum;
     nonOperatingCashAndInvestments: NullOrUndefNum;
@@ -42,7 +42,7 @@ export declare type InvestedCapitalParams = {
  * @returns
  */
 export declare const investedCapital: ({ totalDebt, totalEquity, nonOperatingCashAndInvestments, }: InvestedCapitalParams) => number | null;
-export declare type OperatingIncomeParams = {
+export type OperatingIncomeParams = {
     grossIncome: NullOrUndefNum;
     operatingExpenses: NullOrUndefNum;
 };
@@ -51,11 +51,11 @@ export declare type OperatingIncomeParams = {
  * how much of a company's revenue will eventually become profits.
  */
 export declare const operatingIncome: ({ grossIncome, operatingExpenses, }: OperatingIncomeParams) => number | null;
-export declare type GrossMarginParams = {
+export type GrossMarginParams = {
     grossIncome: NullOrUndefNum;
     COGS: NullOrUndefNum;
 };
-export declare type NetDebtParams = {
+export type NetDebtParams = {
     totalDebt: NullOrUndefNum;
     cash: NullOrUndefNum;
 };
@@ -64,7 +64,7 @@ export declare type NetDebtParams = {
  * measures a company’s ability to pay all its debts if they were due today.
  */
 export declare const netDebt: ({ totalDebt, cash, }: NetDebtParams) => number | null;
-export declare type EBITParams = {
+export type EBITParams = {
     netIncome: NullOrUndefNum;
     taxes: NullOrUndefNum;
     interest: NullOrUndefNum;

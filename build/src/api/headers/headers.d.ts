@@ -1,5 +1,5 @@
 import { CustomHeadersPre } from 'lullo-common-types';
-export declare type IHeaders = FixedIncomingHttpHeaders & Partial<CustomHeadersPre>;
+export type IHeaders = FixedIncomingHttpHeaders & Partial<CustomHeadersPre>;
 declare class Headers {
     headers: IHeaders;
     constructor(head?: IHeaders);

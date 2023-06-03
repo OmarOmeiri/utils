@@ -62,7 +62,7 @@ export declare function capitalizeWords(str: string, minLength?: number): string
  * @returns
  */
 export declare function normalizeUrl(str: string): string;
-declare type convertCamelCaseType = {
+type convertCamelCaseType = {
     str: string;
     insert?: string;
     capitalize?: 'all' | 'first' | 'none';

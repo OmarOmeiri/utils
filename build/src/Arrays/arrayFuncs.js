@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.windowArray = exports.arrayTo2D = exports.arraySum = exports.arrayAverage = exports.cartesianProduct = exports.arrayToMatrix = exports.sortArrayWithSortingArray = exports.nArraySum1 = exports.range = exports.shuffleArray = exports.asyncFilterSeq = exports.findDuplicateString = exports.findDuplicates = exports.getObjDuplicatesByKey = exports.asyncFilter = exports.pickRandom = exports.removeByIndex = exports.filterObjectByKeys = exports.arrayIncludesAnotherArrayAll = exports.arrayIncludesAnotherArray = exports.replaceItemsInObjArray = exports.replaceInObjArrayByKeyValue = exports.chunkArrOfObjsByKeyAndValue = exports.filterArrOfObjsByKeyValuePair = exports.sum2DArrayCols = exports.matchStringInArrayofSubstr = exports.genRndNumUniqArray = exports.sortObjArrayByArrayAndKey = exports.sortStrArr = exports.sortObjArrayIgCase = exports.sortNumArray = exports.sortObjArray = exports.matchArrayRegex = exports.genChunk = exports.chunk = exports.arrayInnerJoin = exports.arrayOuterJoin = exports.arrayDiff = exports.filterObjArr = exports.countOccurence = exports.countOccurences = exports.getTypesInArray = exports.removeDuplicatesFromObjArrayByPropNames = exports.removeDuplicatesFromObjArrayByPropName = exports.removeValueFromArray = exports.breakChunks = exports.findIndexes = exports.isNumberArray = exports.isArrayEqual = void 0;
+exports.mapChunk = exports.windowArray = exports.arrayTo2D = exports.arraySum = exports.arrayAverage = exports.cartesianProduct = exports.arrayToMatrix = exports.sortArrayWithSortingArray = exports.nArraySum1 = exports.range = exports.shuffleArray = exports.asyncFilterSeq = exports.findDuplicateString = exports.findDuplicates = exports.getObjDuplicatesByKey = exports.asyncFilter = exports.pickRandom = exports.removeByIndex = exports.filterObjectByKeys = exports.arrayIncludesAnotherArrayAll = exports.arrayIncludesAnotherArray = exports.replaceItemsInObjArray = exports.replaceInObjArrayByKeyValue = exports.chunkArrOfObjsByKeyAndValue = exports.filterArrOfObjsByKeyValuePair = exports.sum2DArrayCols = exports.matchStringInArrayofSubstr = exports.genRndNumUniqArray = exports.sortObjArrayByArrayAndKey = exports.sortStrArr = exports.sortObjArrayIgCase = exports.sortNumArray = exports.sortObjArray = exports.matchArrayRegex = exports.genChunk = exports.chunk = exports.arrayInnerJoin = exports.arrayOuterJoin = exports.arrayDiff = exports.filterObjArr = exports.countOccurence = exports.countOccurences = exports.getTypesInArray = exports.removeDuplicatesFromObjArrayByPropNames = exports.removeDuplicatesFromObjArrayByPropName = exports.removeValueFromArray = exports.breakChunks = exports.findIndexes = exports.isNumberArray = exports.isArrayEqual = void 0;
 /* eslint-disable arrow-body-style */
 /**
  * Exports all functions related to array manipulation.
@@ -910,4 +910,11 @@ function* windowArray(arr, size) {
     }
 }
 exports.windowArray = windowArray;
+/**
+ * Maps through chunks of an array of a given sizencu
+ */
+function mapChunk(arr, callback, size) {
+    return chunk(arr, size).map((c) => callback(c));
+}
+exports.mapChunk = mapChunk;
 //# sourceMappingURL=arrayFuncs.js.map

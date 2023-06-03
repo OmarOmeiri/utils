@@ -1,4 +1,4 @@
-export declare type ArraySortOrder = 'asc' | 'desc';
+export type ArraySortOrder = 'asc' | 'desc';
 /**
  * Deep comparison of two arrays.
  * @param x
@@ -110,7 +110,7 @@ export declare const arrayInnerJoin: <T>(arr1: T[], arr2: T[]) => T[];
  * @param {Number} size size of the chunks
  * @returns
  */
-export declare function chunk<T>(array: T[], size: number): T[][] | null;
+export declare function chunk<T>(array: T[], size: number): T[][];
 /**
  * Aggrupates arrays in a given size
  * @param {Array} array array to be gruped / chunked
@@ -359,7 +359,7 @@ export declare const arrayIncludesAnotherArray: <T extends unknown[]>(arrToFind:
  * @returns
  */
 export declare const arrayIncludesAnotherArrayAll: <T extends unknown[]>(arrToFind: T, arr: T) => boolean;
-declare type filterObjectByKeysOverload = {
+type filterObjectByKeysOverload = {
     <T>(obj: T, keys: string | string[], inplace: true): undefined;
     <T>(obj: T, keys: string | string[], inplace?: false): Partial<T>;
 };
@@ -481,4 +481,8 @@ export declare const arrayTo2D: <T>(arr: T[], size: number) => T[][];
  * @param size
  */
 export declare function windowArray<T>(arr: Array<T>, size: number): Generator<Array<T>>;
+/**
+ * Maps through chunks of an array of a given sizencu
+ */
+export declare function mapChunk<T, const S extends number, R>(arr: T[], callback: (t: T[]) => R, size: S): R[];
 export {};

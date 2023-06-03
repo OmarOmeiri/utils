@@ -7,7 +7,7 @@
 import { PutObjectCommandInput } from '@aws-sdk/client-s3';
 import type { ObjectCannedACL, CreateBucketOutput, DeleteBucketCommandOutput, GetObjectCommandOutput, DeleteObjectCommandOutput, GetBucketAclOutput, GetBucketWebsiteOutput, ListObjectsV2Output, HeadObjectCommandOutput, PutBucketAclCommandOutput, PutBucketWebsiteCommandOutput, PutObjectOutput, PutObjectRequest } from '@aws-sdk/client-s3';
 export type { ObjectCannedACL, CreateBucketOutput, DeleteBucketCommandOutput, GetObjectCommandOutput, DeleteObjectCommandOutput, GetBucketAclOutput, GetBucketWebsiteOutput, ListObjectsV2Output, HeadObjectCommandOutput, PutBucketAclCommandOutput, PutBucketWebsiteCommandOutput, PutObjectOutput, PutObjectRequest, PutObjectCommandInput, };
-declare type Logger<T = undefined> = (args: {
+type Logger<T = undefined> = (args: {
     message: string;
     status?: number;
     extra: T & {

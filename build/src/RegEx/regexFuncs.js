@@ -15,7 +15,7 @@ var regexFlags;
     regexFlags["ig"] = "ig";
     regexFlags["im"] = "im";
     regexFlags["gm"] = "gm";
-})(regexFlags = exports.regexFlags || (exports.regexFlags = {}));
+})(regexFlags || (exports.regexFlags = regexFlags = {}));
 /**
  * Validates a MongoDB ObjectID
  */

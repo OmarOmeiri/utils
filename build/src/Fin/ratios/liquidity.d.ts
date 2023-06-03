@@ -1,5 +1,5 @@
-declare type NullOrUndefNum = null | undefined | number;
-export declare type RatiosCurrentParams = {
+type NullOrUndefNum = null | undefined | number;
+export type RatiosCurrentParams = {
     currentAssets: NullOrUndefNum;
     currentLiabilities: NullOrUndefNum;
 };
@@ -9,7 +9,7 @@ export declare type RatiosCurrentParams = {
  * CR <- current_assets / current_liabilities
  */
 export declare const RatiosCurrent: ({ currentAssets, currentLiabilities, }: RatiosCurrentParams) => number | null;
-export declare type RatiosQuickParams = {
+export type RatiosQuickParams = {
     currentAssets: NullOrUndefNum;
     currentLiabilities: NullOrUndefNum;
     inventory: NullOrUndefNum;
@@ -20,7 +20,7 @@ export declare type RatiosQuickParams = {
  * QR <- (current_assets - inventory) / current_liabilities
  */
 export declare const RatiosQuick: ({ currentAssets, currentLiabilities, inventory, }: RatiosQuickParams) => number | null;
-export declare type RatiosCashParams = {
+export type RatiosCashParams = {
     cash: NullOrUndefNum;
     currentLiabilities: NullOrUndefNum;
 };
@@ -32,7 +32,7 @@ export declare type RatiosCashParams = {
  *
  */
 export declare const RatiosCash: ({ cash, currentLiabilities, }: RatiosCashParams) => number | null;
-export declare type RatiosNetTradeCycleParams = {
+export type RatiosNetTradeCycleParams = {
     DSO: NullOrUndefNum;
     DIO: NullOrUndefNum;
     DPO: NullOrUndefNum;
@@ -43,7 +43,7 @@ export declare type RatiosNetTradeCycleParams = {
  * NTC <- DSO + DIO - DPO
  */
 export declare const RatiosNetTradeCycle: ({ DSO, DIO, DPO, }: RatiosNetTradeCycleParams) => number | null;
-export declare type RatiosDSOParams = {
+export type RatiosDSOParams = {
     receivables: NullOrUndefNum;
     revenue: NullOrUndefNum;
     period?: number;
@@ -54,7 +54,7 @@ export declare type RatiosDSOParams = {
  * DSO <- (receivables / total_revenue) * p
  */
 export declare const RatiosDSO: ({ receivables, revenue, period, }: RatiosDSOParams) => number | null;
-export declare type RatiosDIOParams = {
+export type RatiosDIOParams = {
     inventory: NullOrUndefNum;
     COGS: NullOrUndefNum;
     period?: number;
@@ -65,7 +65,7 @@ export declare type RatiosDIOParams = {
  * DIO <- (inventory / COGS) * p
  */
 export declare const RatiosDIO: ({ inventory, COGS, period, }: RatiosDIOParams) => number | null;
-export declare type RatiosDPOParams = {
+export type RatiosDPOParams = {
     payables: NullOrUndefNum;
     COGS: NullOrUndefNum;
     period?: number;

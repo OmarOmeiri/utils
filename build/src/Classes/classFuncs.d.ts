@@ -21,7 +21,7 @@ export declare function isClass(obj: any): boolean;
  */
 export declare function getMethodNames<C extends Class>(cls: C): (keyof C['prototype'])[];
 export declare function getMethodNames<C extends {}>(cls: C): (keyof C)[];
-export declare type ProxiedClass<T extends Record<string, any>, E extends Record<string, any>> = {
+export type ProxiedClass<T extends Record<string, any>, E extends Record<string, any>> = {
     [KT in keyof T]: T[KT];
 } & {
     [KE in keyof E]: E[KE];

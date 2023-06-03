@@ -5,7 +5,7 @@
  * @returns
  */
 export declare function parseStrToNumber(number: string | number, thousandSep?: string): number;
-declare type isNumberConfig = {
+type isNumberConfig = {
     int?: boolean;
     nan?: boolean;
 };

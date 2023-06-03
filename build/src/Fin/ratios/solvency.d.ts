@@ -1,5 +1,5 @@
-declare type NullOrUndefNum = null | undefined | number;
-export declare type RatiosDebtToAssetParams = {
+type NullOrUndefNum = null | undefined | number;
+export type RatiosDebtToAssetParams = {
     totalAssets: NullOrUndefNum;
     totalDebt: NullOrUndefNum;
 };
@@ -9,7 +9,7 @@ export declare type RatiosDebtToAssetParams = {
  * DR <- total_debt / total_assets
  */
 export declare const RatiosDebtToAsset: ({ totalAssets, totalDebt, }: RatiosDebtToAssetParams) => number | null;
-export declare type RatiosNetDebtToAssetParams = {
+export type RatiosNetDebtToAssetParams = {
     totalAssets: NullOrUndefNum;
     netDebt: NullOrUndefNum;
 };
@@ -19,7 +19,7 @@ export declare type RatiosNetDebtToAssetParams = {
  * NDTA <- net_debt / total_assets
  */
 export declare const RatiosNetDebtToAsset: ({ totalAssets, netDebt, }: RatiosNetDebtToAssetParams) => number | null;
-export declare type RatiosNetDebtToNetAssetParams = {
+export type RatiosNetDebtToNetAssetParams = {
     shareholdersEquity: NullOrUndefNum;
     netDebt: NullOrUndefNum;
 };
@@ -29,7 +29,7 @@ export declare type RatiosNetDebtToNetAssetParams = {
  * NDTNA <- net_debt / net_assets
  */
 export declare const RatiosNetDebtToNetAsset: ({ shareholdersEquity, netDebt, }: RatiosNetDebtToNetAssetParams) => number | null;
-export declare type RatiosNetDebtToEBITDAParams = {
+export type RatiosNetDebtToEBITDAParams = {
     netDebt: NullOrUndefNum;
     EBITDA: NullOrUndefNum;
 };
@@ -39,7 +39,7 @@ export declare type RatiosNetDebtToEBITDAParams = {
  * NDEBITDA <- net_debt / EBITDA
  */
 export declare const RatiosNetDebtToEBITDA: ({ netDebt, EBITDA, }: RatiosNetDebtToEBITDAParams) => number | null;
-export declare type RatiosNetDebtToEbitParams = {
+export type RatiosNetDebtToEbitParams = {
     netDebt: NullOrUndefNum;
     EBIT: NullOrUndefNum;
 };
@@ -62,12 +62,12 @@ export declare const RatiosNetDebtToEbit: ({ netDebt, EBIT, }: RatiosNetDebtToEb
 *
 * DTE <- total_liabilities / shareholders_equity
 */
-export declare type RatiosDebtToEquityParams = {
+export type RatiosDebtToEquityParams = {
     shareholdersEquity: NullOrUndefNum;
     totalLiabilities: NullOrUndefNum;
 };
 export declare const RatiosDebtToEquity: ({ shareholdersEquity, totalLiabilities, }: RatiosDebtToEquityParams) => number | null;
-export declare type RatiosInterestCoverageParams = {
+export type RatiosInterestCoverageParams = {
     interestExpenses: NullOrUndefNum;
     EBIT: NullOrUndefNum;
 };

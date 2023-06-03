@@ -5,7 +5,7 @@
  */
 import dayjs, { OpUnitType, QUnitType } from 'dayjs';
 import './holidays';
-declare type dateFormats = 'DD/MM/YYYY' | 'DD-MM-YYYY' | 'YYYY-MM-DD' | 'YYYY/MM/DD';
+type dateFormats = 'DD/MM/YYYY' | 'DD-MM-YYYY' | 'YYYY-MM-DD' | 'YYYY/MM/DD';
 export declare enum dateComparison {
     gt = ">",
     gte = ">=",
@@ -95,7 +95,7 @@ export declare function fillMissingDays(dates: Date[], sort: 'asc' | 'desc'): Da
  * @returns
  */
 export declare function diffDate(start: Date | dayjs.Dayjs, end: Date | dayjs.Dayjs, unit: QUnitType | OpUnitType): number;
-declare type ObjWithDate<K extends string> = {
+type ObjWithDate<K extends string> = {
     [K: string]: unknown | Date;
 } & {
     [DK in K]: Date;

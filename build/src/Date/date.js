@@ -31,7 +31,7 @@ var dateComparison;
     dateComparison["lt"] = "<";
     dateComparison["lte"] = "<=";
     dateComparison["eq"] = "=";
-})(dateComparison = exports.dateComparison || (exports.dateComparison = {}));
+})(dateComparison || (exports.dateComparison = dateComparison = {}));
 // eslint-disable-next-line require-jsdoc
 function validateDate(date, strict, format) {
     return (0, dayjs_1.default)(date, format, strict).isValid();
