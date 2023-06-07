@@ -579,7 +579,7 @@ export function getObjPaths<T extends Record<string, any>>(obj: T): string[] {
   return recurse(obj, '', []);
 }
 
-export const safeStringify = (obj:Record<string, unknown>, indent = 2): string => {
+export const safeStringify = (obj:object, indent = 2): string => {
   let cache: any[] | null = [];
   const retVal = JSON.stringify(
     obj,

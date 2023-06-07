@@ -325,7 +325,7 @@ export declare function rmvObjDuplicatesByKey<T extends Record<string, any>[]>(o
  * NOTE: Returns arrays in bracket notation
  */
 export declare function getObjPaths<T extends Record<string, any>>(obj: T): string[];
-export declare const safeStringify: (obj: Record<string, unknown>, indent?: number) => string;
+export declare const safeStringify: (obj: object, indent?: number) => string;
 /**
  * Filters undefined properties.
  *
