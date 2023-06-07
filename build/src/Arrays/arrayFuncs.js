@@ -24,6 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mapChunk = exports.windowArray = exports.arrayTo2D = exports.arraySum = exports.arrayAverage = exports.cartesianProduct = exports.arrayToMatrix = exports.sortArrayWithSortingArray = exports.nArraySum1 = exports.range = exports.shuffleArray = exports.asyncFilterSeq = exports.findDuplicateString = exports.findDuplicates = exports.getObjDuplicatesByKey = exports.asyncFilter = exports.pickRandom = exports.removeByIndex = exports.filterObjectByKeys = exports.arrayIncludesAnotherArrayAll = exports.arrayIncludesAnotherArray = exports.replaceItemsInObjArray = exports.replaceInObjArrayByKeyValue = exports.chunkArrOfObjsByKeyAndValue = exports.filterArrOfObjsByKeyValuePair = exports.sum2DArrayCols = exports.matchStringInArrayofSubstr = exports.genRndNumUniqArray = exports.sortObjArrayByArrayAndKey = exports.sortStrArr = exports.sortObjArrayIgCase = exports.sortNumArray = exports.sortObjArray = exports.matchArrayRegex = exports.genChunk = exports.chunk = exports.arrayInnerJoin = exports.arrayOuterJoin = exports.arrayDiff = exports.filterObjArr = exports.countOccurence = exports.countOccurences = exports.getTypesInArray = exports.removeDuplicatesFromObjArrayByPropNames = exports.removeDuplicatesFromObjArrayByPropName = exports.removeValueFromArray = exports.breakChunks = exports.findIndexes = exports.isNumberArray = exports.isArrayEqual = void 0;
+exports.insertAtIndex = exports.omitFromObjArray = void 0;
 /* eslint-disable arrow-body-style */
 /**
  * Exports all functions related to array manipulation.
@@ -32,6 +33,7 @@ exports.mapChunk = exports.windowArray = exports.arrayTo2D = exports.arraySum = 
  */
 const lodash_1 = __importStar(require("lodash"));
 const Math_1 = require("../Math");
+const Objects_1 = require("../Objects");
 /**
  * Deep comparison of two arrays.
  * @param x
@@ -917,4 +919,45 @@ function mapChunk(arr, callback, size) {
     return chunk(arr, size).map((c, i) => callback(c, i));
 }
 exports.mapChunk = mapChunk;
+/**
+ * Omits properties from an array of objects
+ */
+function omitFromObjArray(arr, keys) {
+    return arr.map((e) => (0, Objects_1.omit)(e, ...keys));
+}
+exports.omitFromObjArray = omitFromObjArray;
+/**
+ * Inserts elements in an array by index.
+ *
+ * IMPORTANT: Will add null elements if the desired index is larger that array.length
+ * Will dislocate elements to a greater index if there is an element in the desired index.
+ * @param arr
+ * @param index
+ * @param elem
+ * @returns
+ */
+const insertAtIndex = (arr, index, elem) => {
+    if (arr.length === index) {
+        return [...arr, elem];
+    }
+    if (arr.length < index) {
+        return Array(index + 1)
+            .fill(null)
+            .map((_, i) => {
+            if (i < arr.length)
+                return arr[i];
+            if (i === index)
+                return elem;
+            return null;
+        });
+    }
+    const part1 = arr.slice(0, index);
+    const part2 = arr.slice(index, arr.length);
+    return [
+        ...part1,
+        elem,
+        ...part2,
+    ];
+};
+exports.insertAtIndex = insertAtIndex;
 //# sourceMappingURL=arrayFuncs.js.map

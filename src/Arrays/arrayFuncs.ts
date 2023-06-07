@@ -12,6 +12,7 @@ import _l, {
   uniqWith,
 } from 'lodash';
 import { getRandomInt } from '../Math';
+import { omit } from '../Objects';
 
 export type ArraySortOrder = 'asc' | 'desc';
 
@@ -995,3 +996,42 @@ export function* windowArray<T>(arr: Array<T>, size: number): Generator<Array<T>
 export function mapChunk <T, const S extends number, R>(arr: T[], callback: (t: T[], i: number) => R, size: S): R[] {
   return chunk(arr, size).map((c, i) => callback(c, i));
 }
+
+/**
+ * Omits properties from an array of objects
+ */
+export function omitFromObjArray<T extends object>(arr: T[], keys: (keyof T)[]) {
+  return arr.map((e) => omit(e, ...keys));
+}
+
+/**
+ * Inserts elements in an array by index.
+ *
+ * IMPORTANT: Will add null elements if the desired index is larger that array.length
+ * Will dislocate elements to a greater index if there is an element in the desired index.
+ * @param arr
+ * @param index
+ * @param elem
+ * @returns
+ */
+export const insertAtIndex = <T>(arr: T[], index: number, elem: T) => {
+  if (arr.length === index) {
+    return [...arr, elem];
+  }
+  if (arr.length < index) {
+    return Array(index + 1)
+      .fill(null)
+      .map((_, i) => {
+        if (i < arr.length) return arr[i];
+        if (i === index) return elem;
+        return null;
+      });
+  }
+  const part1 = arr.slice(0, index);
+  const part2 = arr.slice(index, arr.length);
+  return [
+    ...part1,
+    elem,
+    ...part2,
+  ];
+};

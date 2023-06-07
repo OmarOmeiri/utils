@@ -485,4 +485,19 @@ export declare function windowArray<T>(arr: Array<T>, size: number): Generator<A
  * Maps through chunks of an array of a given sizencu
  */
 export declare function mapChunk<T, const S extends number, R>(arr: T[], callback: (t: T[], i: number) => R, size: S): R[];
+/**
+ * Omits properties from an array of objects
+ */
+export declare function omitFromObjArray<T extends object>(arr: T[], keys: (keyof T)[]): { [key in Exclude<keyof T, keyof T>]: T[key]; }[];
+/**
+ * Inserts elements in an array by index.
+ *
+ * IMPORTANT: Will add null elements if the desired index is larger that array.length
+ * Will dislocate elements to a greater index if there is an element in the desired index.
+ * @param arr
+ * @param index
+ * @param elem
+ * @returns
+ */
+export declare const insertAtIndex: <T>(arr: T[], index: number, elem: T) => (T | null)[];
 export {};
