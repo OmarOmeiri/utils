@@ -477,10 +477,12 @@ export declare const arraySum: (...arr: number[]) => number;
 export declare const arrayTo2D: <T>(arr: T[], size: number) => T[][];
 /**
  * Generator that yields an array chunked by the size param
+ * and moves the window by the windowMove param
  * @param arr
  * @param size
+ * @param [windowSize] default = 1
  */
-export declare function windowArray<T>(arr: Array<T>, size: number): Generator<Array<T>>;
+export declare function windowArray<T>(arr: Array<T>, size: number, windowMove?: number): Generator<Array<T>>;
 /**
  * Maps through chunks of an array of a given sizencu
  */

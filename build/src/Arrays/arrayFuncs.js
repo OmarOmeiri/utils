@@ -901,13 +901,22 @@ const arrayTo2D = (arr, size) => (arr.reduce((mat, item, i) => {
 exports.arrayTo2D = arrayTo2D;
 /**
  * Generator that yields an array chunked by the size param
+ * and moves the window by the windowMove param
  * @param arr
  * @param size
+ * @param [windowSize] default = 1
  */
-function* windowArray(arr, size) {
+function* windowArray(arr, size, windowMove = 1) {
+    if (windowMove < 1)
+        throw new Error('Window dislocation cannot be less than 1.');
+    if (size < 2)
+        throw new Error('Window size cannot be less than 2.');
     const lng = arr.length;
-    const iterations = lng - (size - 1);
-    for (const i of Array(iterations).keys()) {
+    const iterations = windowMove > 1
+        ? Math.ceil(((lng - (size - 1)) / windowMove) % lng)
+        : lng - (size - 1);
+    const ixs = Array.from(Array(iterations).keys()).map((i) => i * windowMove);
+    for (const i of ixs) {
         yield range(i, i + (size - 1)).map((j) => arr[j]);
     }
 }
